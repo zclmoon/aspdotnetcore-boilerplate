@@ -7,3 +7,9 @@
 
 Continuing ...
 
+# Roadmap
+- [x] Swagger
+- [x] MySqlConnector
+- [x] Dapper
+- [ ] Logging
+- [ ] Exception Handling
