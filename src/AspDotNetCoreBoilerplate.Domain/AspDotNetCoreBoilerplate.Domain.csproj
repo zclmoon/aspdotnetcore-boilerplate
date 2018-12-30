@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AspDotNetCoreBoilerplate.Core\AspDotNetCoreBoilerplate.Core.csproj" />
+    <ProjectReference Include="..\AspDotNetCoreBoilerplate.DataAccess\AspDotNetCoreBoilerplate.DataAccess.csproj" />
+    <ProjectReference Include="..\AspDotNetCoreBoilerplate.Integration\AspDotNetCoreBoilerplate.Integration.csproj" />
+  </ItemGroup>
+
+</Project>
