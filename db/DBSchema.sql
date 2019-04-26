@@ -1,6 +1,6 @@
 CREATE DATABASE my_test;
 
-USE DATABASE my_test;
+USE my_test;
 
 DROP TABLE IF EXISTS `user_info`;
 
