@@ -10,9 +10,9 @@ This project is for setting up a simple .net core 2.x Rest API service quickly.
 Continuing ...
 
 # Roadmap
-- [ ] Swagger
-- [ ] MySqlConnector
-- [ ] Dapper
+- [x] Swagger
+- [x] MySqlConnector
+- [x] Dapper
 - [ ] Logging
 - [ ] Exception Handling
 

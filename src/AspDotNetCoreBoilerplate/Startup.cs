@@ -25,11 +25,10 @@ namespace AspDotNetCoreBoilerplate
 
             services.Configure<ConnectionStrings>(Configuration.GetSection("ConnectionStrings"));
 
-            // Services
-            services.AddTransient<IUserService, UserService>();
-
-            // Repositories
-            services.AddTransient<IUserRepository, UserRepository>();
+            // Services Registration
+            RegisterServices(services);
+            // Repositories Registration
+            RegisterRepositories(services);
 
             // Swagger
             services.AddSwaggerGen(c =>
@@ -38,7 +37,7 @@ namespace AspDotNetCoreBoilerplate
                 {
                     Title = "Test API",
                     Version = "v1",
-                    Description = "This is xxx API"
+                    Description = "This is MyProject API"
                 });
             });
         }
@@ -60,5 +59,18 @@ namespace AspDotNetCoreBoilerplate
 
             app.UseMvc();
         }
+
+        # region IoC Registration
+        private void RegisterServices(IServiceCollection services)
+        {
+            services.AddTransient<IUserService, UserService>();
+
+        }
+
+        private void RegisterRepositories(IServiceCollection services)
+        {
+            services.AddTransient<IUserRepository, UserRepository>();
+        }
+        #endregion
     }
 }
