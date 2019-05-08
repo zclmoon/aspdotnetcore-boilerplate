@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <ApplicationInsightsResourceId>/subscriptions/708d34db-ebc0-496e-b638-f357bddb5b4d/resourcegroups/EFKidsLearningResource1/providers/microsoft.insights/components/Learning-AppInsight-Investigation</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/708d34db-ebc0-496e-b638-f357bddb5b4d/resourcegroups/EFKidsLearningResource1/providers/microsoft.insights/components/Learning-AppInsight-Investigation</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.6.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
@@ -20,6 +23,10 @@
     <ProjectReference Include="..\AspDotNetCoreBoilerplate.Core\AspDotNetCoreBoilerplate.Core.csproj" />
     <ProjectReference Include="..\AspDotNetCoreBoilerplate.Domain\AspDotNetCoreBoilerplate.Domain.csproj" />
     <ProjectReference Include="..\AspDotNetCoreBoilerplate.Integration\AspDotNetCoreBoilerplate.Integration.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
 </Project>

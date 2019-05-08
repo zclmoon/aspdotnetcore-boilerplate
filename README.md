@@ -13,6 +13,7 @@ Continuing ...
 - [x] Swagger
 - [x] MySqlConnector
 - [x] Dapper
+- [ ] API Security
 - [ ] Logging
 - [ ] Exception Handling
 
