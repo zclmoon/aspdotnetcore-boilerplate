@@ -1,6 +1,7 @@
 ﻿using AspDotNetCoreBoilerplate.DataAccess.Repositories;
 using AspDotNetCoreBoilerplate.Domain.User;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,9 +13,15 @@ namespace AspDotNetCoreBoilerplate.Controllers
     {
         private readonly IUserService _userService;
 
-        public UsersController(IUserService userService)
+        private readonly ILogger _logger = null;
+
+        public UsersController(
+            IUserService userService,
+            ILogger<UsersController> logger)
         {
             _userService = userService;
+
+            _logger = logger;
         }
 
         /// <summary>
@@ -26,6 +33,8 @@ namespace AspDotNetCoreBoilerplate.Controllers
         [ProducesResponseType(400)]
         public async Task<IActionResult> Get()
         {
+            _logger.LogInformation("Start to get users.");
+
             var result = await _userService.GetUsers();
 
             return Ok(result);

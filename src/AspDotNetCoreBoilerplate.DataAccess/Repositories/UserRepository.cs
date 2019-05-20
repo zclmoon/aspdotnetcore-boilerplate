@@ -20,7 +20,7 @@ namespace AspDotNetCoreBoilerplate.DataAccess.Repositories
 
         public async Task<List<UserEntity>> GetUsersAsync()
         {
-            var sql = @"select * from user_info";
+            var sql = @"SELECT * FROM my_test.user_info LIMIT 0, 10;";
 
             using (var conn = new MySqlConnection(_connString))
             {
