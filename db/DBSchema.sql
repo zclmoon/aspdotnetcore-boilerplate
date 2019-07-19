@@ -1,5 +1,3 @@
-CREATE DATABASE my_test;
-
 USE my_test;
 
 DROP TABLE IF EXISTS `user_info`;
@@ -20,10 +18,4 @@ CREATE TABLE `my_test`.`user_info` (
   `deleted_date_utc` DATETIME NOT NULL,
   `deleted_by` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`Id`),
-  UNIQUE INDEX `Id_UNIQUE` (`Id` ASC)) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-INSERT INTO `my_test`.`user_info` () 
-VALUES 
-(
-  
-);
+  UNIQUE INDEX `Id_UNIQUE` (`Id` ASC)) ENGINE=InnoDB CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

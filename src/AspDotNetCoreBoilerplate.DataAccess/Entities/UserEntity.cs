@@ -13,11 +13,6 @@ namespace AspDotNetCoreBoilerplate.DataAccess.Entities
 
         public string MobilePhone { get; set; }
 
-        /// <summary>
-        ///  0 : femail
-        ///  1 : mail
-        ///  2: others
-        /// </summary>
         public GenderEnum Gender { get; set; }
 
         public DateTime Birthday { get; set; }
