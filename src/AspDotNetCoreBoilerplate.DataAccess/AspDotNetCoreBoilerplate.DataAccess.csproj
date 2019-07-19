@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AspDotNetCoreBoilerplate.Configuration\AspDotNetCoreBoilerplate.Configuration.csproj" />
+    <ProjectReference Include="..\AspDotNetCoreBoilerplate.Core\AspDotNetCoreBoilerplate.Core.csproj" />
   </ItemGroup>
 
 </Project>

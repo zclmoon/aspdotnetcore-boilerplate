@@ -10,4 +10,8 @@
     <ProjectReference Include="..\AspDotNetCoreBoilerplate.Integration\AspDotNetCoreBoilerplate.Integration.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Note\" />
+  </ItemGroup>
+
 </Project>

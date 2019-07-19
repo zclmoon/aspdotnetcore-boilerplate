@@ -20,12 +20,7 @@ namespace AspDotNetCoreBoilerplate.Domain.User
         {
             var userEntities = await _userRepository.GetUsersAsync();
 
-            return userEntities.Select(x => new User
-            {
-                UserId = x.Id,
-                Email = x.Email,
-                UserName = x.Name
-            }).ToList();
+            return userEntities.Select(x => x.ToUser()).ToList();
         }
     }
 }
