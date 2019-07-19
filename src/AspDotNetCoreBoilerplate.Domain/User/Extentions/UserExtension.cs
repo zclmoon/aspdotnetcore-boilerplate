@@ -25,5 +25,18 @@ namespace AspDotNetCoreBoilerplate.Domain.User
                 UserName = userEntity.Name
             };
         }
-    }
+
+        public static UserEntity ToUserEntity(this User user)
+        {
+            if (user == null)
+            {
+                return null;
+            }
+
+            return new UserEntity()
+            {
+
+            };
+        }
+    } // UserExtension
 }
