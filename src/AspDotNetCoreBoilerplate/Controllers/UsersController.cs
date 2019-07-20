@@ -51,6 +51,8 @@ namespace AspDotNetCoreBoilerplate.Controllers
         {
             // TODO: logic
 
+           await _userService.CreateUser(userInfo);
+
             return Ok();
         }
     }

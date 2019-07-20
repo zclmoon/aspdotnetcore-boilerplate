@@ -19,7 +19,7 @@ namespace AspDotNetCoreBoilerplate.Domain.User
                 UserId = userEntity.Id,
                 MobilePhone = userEntity.MobilePhone,
                 Address = userEntity.Address,
-                Birthday = userEntity.Birthday,
+                Birthday = userEntity.Birthday?? null,
                 Email = userEntity.Email,
                 Gender = userEntity.Gender,
                 UserName = userEntity.Name
@@ -35,7 +35,19 @@ namespace AspDotNetCoreBoilerplate.Domain.User
 
             return new UserEntity()
             {
-
+                 Address = user.Address,
+                 Birthday = user.Birthday,
+                 Name = user.UserName,
+                 Email = user.Email,
+                 Gender = user.Gender,
+                 MobilePhone = user.MobilePhone,   
+                 CreatedBy = "1",
+                 CreatedDateUtc = DateTime.UtcNow,
+                 DeletedBy = null,
+                 DeletedDateUtc = null,
+                 Password = null,
+                 UpdatedBy = null,
+                 UpdatedDateUtc = null
             };
         }
     } // UserExtension

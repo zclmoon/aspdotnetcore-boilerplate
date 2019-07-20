@@ -8,6 +8,6 @@ namespace AspDotNetCoreBoilerplate.DataAccess.Repositories
     {
         Task<List<UserEntity>> GetUsersAsync();
 
-        Task CreateUserAsync(UserEntity userEntity);
+        Task<string> CreateUserAsync(UserEntity userEntity);
     }
 }

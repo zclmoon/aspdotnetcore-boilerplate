@@ -8,5 +8,7 @@ namespace AspDotNetCoreBoilerplate.Domain.User
     public interface IUserService
     {
         Task<IEnumerable<User>> GetUsers();
+
+        Task CreateUser(User user);
     }
 }

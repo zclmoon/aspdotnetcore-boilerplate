@@ -13,9 +13,9 @@ namespace AspDotNetCoreBoilerplate.DataAccess.Entities
 
         public string MobilePhone { get; set; }
 
-        public GenderEnum Gender { get; set; }
+        public GenderEnum? Gender { get; set; }
 
-        public DateTime Birthday { get; set; }
+        public DateTime? Birthday { get; set; }
 
         public string Email { get; set; }
 

@@ -22,7 +22,7 @@ namespace AspDotNetCoreBoilerplate.DataAccess.Repositories
 
         public async Task<List<UserEntity>> GetUsersAsync()
         {
-            var sql = @"SELECT * FROM my_test.user_info LIMIT 0, 10;"; ;
+            var sql = @"SELECT * FROM my_test.user_info LIMIT 0, 10;";
 
 
             using (var conn = new MySqlConnection(_connString))
@@ -33,9 +33,8 @@ namespace AspDotNetCoreBoilerplate.DataAccess.Repositories
             }
         }
 
-        public async Task CreateUserAsync(UserEntity userEntity)
+        public async Task<string> CreateUserAsync(UserEntity userEntity)
         {
-
             using (var conn = new MySqlConnection(_connString))
             {
                 conn.Open();
@@ -49,25 +48,51 @@ namespace AspDotNetCoreBoilerplate.DataAccess.Repositories
 
                     sql.Append(CreateInsertUserSql(userEntity, param));
 
-                    sql.Append("SELECT @MediaId");
-
-
                     conn.QueryFirstOrDefault<int>(sql.ToString(), param, transaction);
 
                     transaction.Commit();
                 }
-
             }
+
+            return userEntity.Id;
         }
 
         private string CreateInsertUserSql(UserEntity userEntity, DynamicParameters param)
         {
             var sql = @"
-
-
+INSERT INTO `user_info`(
+    `id`,`password`,`mobile_phone`,`gender`,`name`,`email`,`address`,`birthday`,
+    `created_date_utc`,`created_by`,`updated_date_utc`,`updated_by`,`deleted_date_utc`,`deleted_by`)
+VALUES (
+    @id,
+    @password,
+    @mobilePhone,
+    @gender,
+    @name,
+    @email,
+    @address,
+    @birthday,
+    @createdDate,
+    @createdBy,
+    @updatedDate,
+    @updatedBy,
+    @deletedDate,
+    @deletedBy);
 ";
-            param.Add("", "");
-            param.Add("","");
+            param.Add("id", userEntity.Id);
+            param.Add("password", userEntity.Password);
+            param.Add("mobilePhone", userEntity.MobilePhone);
+            param.Add("gender", userEntity.Gender);
+            param.Add("name", userEntity.Name);
+            param.Add("email", userEntity.Email);
+            param.Add("address", userEntity.Address);
+            param.Add("birthday", userEntity.Birthday);
+            param.Add("createdDate", userEntity.CreatedDateUtc);
+            param.Add("createdBy", userEntity.CreatedBy);
+            param.Add("updatedDate", userEntity.UpdatedDateUtc);
+            param.Add("updatedBy", userEntity.UpdatedBy);
+            param.Add("deletedDate", userEntity.DeletedDateUtc);
+            param.Add("deletedBy", userEntity.DeletedBy);
 
             return sql;
         }

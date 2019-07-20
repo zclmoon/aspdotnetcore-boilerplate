@@ -15,9 +15,9 @@ namespace AspDotNetCoreBoilerplate.DataAccess.Entities
 
         public DateTime CreatedDateUtc { get; set; }
         public string CreatedBy { get; set; }
-        public DateTime UpdatedDateUtc { get; set; }
+        public DateTime? UpdatedDateUtc { get; set; }
         public string UpdatedBy { get; set; }
-        public DateTime DeletedDateUtc { get; set; }
+        public DateTime? DeletedDateUtc { get; set; }
         public string DeletedBy { get; set; }
     }
 }
