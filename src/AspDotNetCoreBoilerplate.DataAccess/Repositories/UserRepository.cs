@@ -41,14 +41,15 @@ namespace AspDotNetCoreBoilerplate.DataAccess.Repositories
 
                 using (var transaction = conn.BeginTransaction())
                 {
-                    // Sample: this is for building a insert sql string in a pretty way.
+                    // this is for building a long sql string in many private methods.
                     StringBuilder sql = new StringBuilder();
 
                     var param = new DynamicParameters();
 
                     sql.Append(CreateInsertUserSql(userEntity, param));
 
-                    conn.QueryFirstOrDefault<int>(sql.ToString(), param, transaction);
+                    await conn.QueryFirstOrDefaultAsync<int>(sql.ToString(), param, transaction);
+
 
                     transaction.Commit();
                 }
@@ -60,6 +61,8 @@ namespace AspDotNetCoreBoilerplate.DataAccess.Repositories
         private string CreateInsertUserSql(UserEntity userEntity, DynamicParameters param)
         {
             var sql = @"
+DECLARE @UserId VARCHAR(100) = 0;
+
 INSERT INTO `user_info`(
     `id`,`password`,`mobile_phone`,`gender`,`name`,`email`,`address`,`birthday`,
     `created_date_utc`,`created_by`,`updated_date_utc`,`updated_by`,`deleted_date_utc`,`deleted_by`)
