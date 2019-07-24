@@ -20,7 +20,7 @@ namespace AspDotNetCoreBoilerplate.Domain.User
         {
             var userEntity = user.ToUserEntity();
 
-           await _userRepository.CreateUserAsync(userEntity);
+            await _userRepository.CreateUserAsync(userEntity);
         }
 
         public async Task<IEnumerable<User>> GetUsers()

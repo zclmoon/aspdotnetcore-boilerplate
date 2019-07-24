@@ -1,5 +1,6 @@
 ﻿using AspDotNetCoreBoilerplate.Configuration;
 using AspDotNetCoreBoilerplate.DataAccess.Repositories;
+using AspDotNetCoreBoilerplate.Domain.Note;
 using AspDotNetCoreBoilerplate.Domain.User;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -64,12 +65,14 @@ namespace AspDotNetCoreBoilerplate
         private void RegisterServices(IServiceCollection services)
         {
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<INoteService, NoteService>();
 
         }
 
         private void RegisterRepositories(IServiceCollection services)
         {
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<INoteRepository, NoteRepository>();
         }
         #endregion
     }

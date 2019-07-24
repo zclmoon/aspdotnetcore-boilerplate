@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Folder Include="Note\" />
+    <Folder Include="Note\Extenstions\" />
   </ItemGroup>
 
 </Project>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AspDotNetCoreBoilerplate.Controllers
 {
-    [Route("api/v1/users")]
+    [Route("api/v1/user")]
     [ApiController]
     public class UsersController : ControllerBase
     {
@@ -28,7 +28,7 @@ namespace AspDotNetCoreBoilerplate.Controllers
         /// Get All Users.
         /// </summary>
         /// <returns></returns>
-        [HttpGet("GetUsers")]
+        [HttpGet("users")]
         [ProducesResponseType(typeof(IEnumerable<User>), 200)]
         [ProducesResponseType(400)]
         public async Task<IActionResult> Get()
